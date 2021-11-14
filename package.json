@@ -1,7 +1,7 @@
 {
   "name": "@subgraphs/uniswap-v3",
   "author": "Nejc Drobnič <yo@quantumly.dev> (https://quantumly.dev)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "license": " BSD-3-Clause",
   "types": "generated/ts/api.d.ts",
