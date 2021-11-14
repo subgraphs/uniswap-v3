@@ -1,0 +1,45 @@
+{
+  "name": "@subgraphs/uniswap-v3",
+  "author": "Nejc Drobnič <yo@quantumly.dev> (https://quantumly.dev)",
+  "version": "1.0.0",
+  "description": "",
+  "license": " BSD-3-Clause",
+  "types": "generated/ts/api.d.ts",
+  "main": "generated/ts/api.d.ts",
+  "scripts": {
+    "sversion": "standard-version",
+    "codegen": "graphql-codegen --overwrite",
+    "postcodegen": "npm-run-all --sequential typescript:** graphql:**",
+    "typescript:replace-invalid-code": "replace-in-file /}\\;/g } generated/ts/api.d.ts --isRegex",
+    "graphql:replace-query": "replace-in-file \"type Query \" \"type UniswapV3Query \" generated/ts/api.graphql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subgraphs/uniswap-v3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/subgraphs/uniswap-v3/issues"
+  },
+  "homepage": "https://github.com/subgraphs/uniswap-v3#readme",
+  "files": [
+    "generated/ts/api.d.ts",
+    "generated/ts/api.graphql"
+  ],
+  "dependencies": {
+    "graphql": "^16.0.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.2.2",
+    "@graphql-codegen/introspection": "2.1.0",
+    "@graphql-codegen/schema-ast": "2.4.0",
+    "@graphql-codegen/typescript": "2.3.1",
+    "@graphql-codegen/typescript-operations": "2.2.0",
+    "@graphql-codegen/typescript-resolvers": "2.4.0",
+    "npm-run-all": "4.1.5",
+    "replace-in-file": "6.3.2",
+    "standard-version": "9.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

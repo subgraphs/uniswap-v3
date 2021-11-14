@@ -1,0 +1,22 @@
+overwrite: true
+schema: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3
+generates:
+  ./generated/ts/api.d.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+      - typescript-operations
+    config:
+      scalars:
+        DateTime: Date
+        JSONObject: 'Record<PropertyKey, any>'
+        BigInt: BigInt
+        Bytes: string
+      constEnums: true
+      immutableTypes: true
+      defaultScalarType: unknown
+  ./generated/ts/api.graphql:
+    plugins:
+      - schema-ast
+    config:
+      commentDescriptions: true
